@@ -5,15 +5,16 @@ $robotoRegular: 'RobotoCondensed-Regular';
 .header-main {
   color: black;
   display: flex;
-  width: 100%;
   justify-content: space-between;
+  
+  padding: 0 50px 0 50px;
   flex-direction: row;
   gap: 300px;
   font-family: $robotoRegular;
   font-size: 20px;
 
   // padding: 0 100px 0 50px;
-  margin-left: 50px;
+  
 
   .header-main__block1 {
     height: 92px;
@@ -21,6 +22,7 @@ $robotoRegular: 'RobotoCondensed-Regular';
     flex-direction: row;
     align-items: center;
     gap: 20px;
+    
 
     .header-main__block1__status {
       display: flex;
@@ -39,8 +41,7 @@ $robotoRegular: 'RobotoCondensed-Regular';
     flex-direction: row;
     align-items: center;
     gap: 20px;
-    width: 430px;
-    padding-right: 50px;
+    
 
     .header-main__block2_info1 {
       display: flex;

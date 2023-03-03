@@ -10,6 +10,7 @@ window.addEventListener('load', function() {
     }   
   })
 })
-$(function() {
-  $('header-links__list a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('header-links__list__active');
-});
+
+// $(function() {
+//   $('header-links__list a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('header-links__list__active');
+// });

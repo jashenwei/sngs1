@@ -25,24 +25,36 @@
 body{
   padding:0;
   margin:0;
-  overflow-x:hidden;
+  overflow-y: hidden;
   height: 100vh;
-  width: 100vw;
+  max-width: 100vw;
   margin-right: 0;
   .main-container{
-    display: flex;
-    // flex-direction: row;
-    
+    display: grid;
+    grid-template-columns: 300px 1fr;
+
+    grid-template-areas: "nav content";
+    // flex-direction: row;\
+    // justify-content: center;
     height: 100vh;
+    overflow: auto; /* Добавляем полосы прокрутки */
+    nav{
+      grid-area: "nav";
+      height: 100%;
+    }
     .container{
-      display: flex;
-      flex-direction: column;
+      overflow-x:hidden;
+      grid-template-rows: repeat(12, 1fr);
+      grid-area: "content";
+      display: grid;
+      // justify-items: stretch;
       min-height: 100vh;
-      padding-left: 300px;
-      width: calc(100% - 370px);
+      width: 100%;
+      z-index: 1;
+      // width: calc(100% - 300px);
       
       .index-main{
-        flex:1 0 auto;
+        // flex:1 0 auto;
         margin-left: 50px;
       }
       

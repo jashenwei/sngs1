@@ -6,26 +6,74 @@ $robotoRegular: 'RobotoCondensed-Regular';
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap:50px;
+  gap: 50px;
 
   h1 {
     font-family: $robotoBold;
     font-size: 48px;
     padding: 0;
     margin: 0;
-    margin-top:50px
+    margin-top: 50px
   }
 
-  button {  
+  button {
     width: 220px;
     height: 60px;
-    border:none;
-    color:white;
+    border: none;
+    color: white;
     background: #0078D2;
     border-radius: 5px;
     font-family: $robotoRegular;
     font-size: 20px;
     margin-bottom: 50px;
+  }
+
+  .tabs-finance {
+    width: 1040px;
+
+    table {
+      width: 100%;
+      height: 472px;
+      border-collapse: collapse;
+      display: flex;
+      gap: 50px;
+
+      tr {
+        border-bottom: 2px solid #EAF5FF;
+        height: 98px;
+        
+        th {
+          padding: 0 0 0 20px;
+          font-size: 24px;
+          width: 856px;
+          height: 44px;
+          margin-bottom: 20px;
+          font-family: $robotoRegular;
+          .s{
+            padding-left: 250px;
+          }
+        }
+
+        td {
+          font-family: $robotoRegular;
+          padding: 0 0 0 20px;
+          .s{
+            padding-left: 250px;
+          }
+        }
+      }
+      tr:nth-child(1) {
+        background: #EAF5FF;
+        width: 520px;
+        height: 72px;
+        text-align: left;
+
+      }
+      
+      .semibold {
+        font-family: $robotoBold;
+      }
+    }
   }
 
   .index-main__personalArea__tabs {
@@ -35,6 +83,7 @@ $robotoRegular: 'RobotoCondensed-Regular';
     align-items: center;
     padding: 0;
     margin: 0;
+
     .index-main__personalArea__tabs_list {
       display: flex;
       flex-direction: row;
@@ -48,9 +97,11 @@ $robotoRegular: 'RobotoCondensed-Regular';
 
       .active-tab {
         color: #0078D2;
-        .active-tab-border{
+
+        .active-tab-border {
           margin-top: 20px;
         }
+
         border-bottom: 2.5px solid #0078D2;
       }
     }
@@ -61,9 +112,7 @@ $robotoRegular: 'RobotoCondensed-Regular';
       font-size: 20px;
       margin-top: 60px;
 
-      .semibold {
-        font-family: $robotoBold;
-      }
+
 
       .tabs-finance__row {
         display: flex;
@@ -97,12 +146,13 @@ $robotoRegular: 'RobotoCondensed-Regular';
               display: flex;
               flex-direction: row;
               justify-content: flex-start;
-              gap:600px;
+              gap: 600px;
               align-items: center;
               width: 1040px;
               height: 72px;
               align-items: center;
               border-bottom: 2px solid #EAF5FF;
+
               .tabs-finance__row__column__body_data {
                 padding-right: 40px;
               }

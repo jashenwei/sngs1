@@ -1,0 +1,62 @@
+mixin image_arrow 
+  .image
+    include ../../../static/img/svg/arrow_down.svg
+mixin button(name)  
+  button(type='button'  class='header-links__list__a__button' onclick='rotate()') #{name}
+mixin dropdown 
+  .header-links__links__a__option_dropdown 
+.header-links
+  .header-links__logo
+    include ../../../static/img/svg/logo.svg
+  .header-links__list
+    .header-links__list__a
+      a.header-links__list__active(href="#") Главная
+    .header-links__list__a
+      a.header-links__list__class(href="#") Карты
+    .header-links__list__a
+      .header-links_list_a_button_block 
+        +button('Финансы')
+        +image_arrow
+      .header-links__links__a__option
+        .header-links__list__a__dropdown
+          .header-links__list__a_dropdown_block
+            a(href="#") Пополнение счета 
+            a(href="#") История транзакции
+    .header-links__list__a
+      .header-links_list_a_button_block  
+        +button('Отчеты')
+        +image_arrow
+      .header-links__links__a__option
+        .header-links__list__a__dropdown
+          .header-links__list__a_dropdown_block
+            a(href="#") Список отчетов
+            a(href="#") Заказать отчет
+            a(href="#") Первичные документы
+    .header-links__list__a
+      .header-links_list_a_button_block 
+        +button('Лимиты и ограничения')
+        +image_arrow
+      
+      .header-links__links__a__option
+        .header-links__list__a__dropdown
+          .header-links__list__a_dropdown_block
+            a(href="#") Ограничители договора          
+            a(href="#") Лимиты договора
+    .header-links__list__a
+      .header-links_list_a_button_block  
+        +button('Пользователи')
+        +image_arrow
+      .header-links__links__a__option#myDropdown 
+        .header-links__list__a__dropdown
+          .header-links__list__a_dropdown_block
+
+            a(href="#") 
+              div Список пользователей        
+            a(href="#") Приглашение пользователей
+    .header-links__list__a
+      a.header-links__list__class(href="#") Найти заправку
+    .header-links__list__a
+      a.header-links__list__class(href="#") Поддержка
+    .header-links__list__a
+      a.header-links__list__class(href="#") 
+        div Уведомления

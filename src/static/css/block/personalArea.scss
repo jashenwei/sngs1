@@ -1,0 +1,116 @@
+$robotoBold: 'RobotoCondensed-Bold';
+$robotoRegular: 'RobotoCondensed-Regular';
+
+.index-main__personalArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:50px;
+
+  h1 {
+    font-family: $robotoBold;
+    font-size: 48px;
+    padding: 0;
+    margin: 0;
+    margin-top:50px
+  }
+
+  button {  
+    width: 220px;
+    height: 60px;
+    border:none;
+    color:white;
+    background: #0078D2;
+    border-radius: 5px;
+    font-family: $robotoRegular;
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
+
+  .index-main__personalArea__tabs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    .index-main__personalArea__tabs_list {
+      display: flex;
+      flex-direction: row;
+      font-size: 24px;
+      width: 856px;
+      height: 44px;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 20px;
+      font-family: $robotoRegular;
+
+      .active-tab {
+        color: #0078D2;
+        .active-tab-border{
+          margin-top: 20px;
+        }
+        border-bottom: 2.5px solid #0078D2;
+      }
+    }
+
+    .tabs-finance {
+      display: flex;
+      flex-direction: row;
+      font-size: 20px;
+      margin-top: 60px;
+
+      .semibold {
+        font-family: $robotoBold;
+      }
+
+      .tabs-finance__row {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        font-family: $robotoRegular;
+
+        .tabs-finance__row_head {
+          display: flex;
+          flex-direction: row;
+          gap: 600px;
+          background: #EAF5FF;
+          width: 1040px;
+          height: 72px;
+          align-items: center;
+          padding-left: 20px;
+        }
+
+        .tabs-finance__row_body {
+          display: flex;
+          flex-direction: row;
+          gap: 190px;
+          padding-left: 20px;
+
+          .tabs-finane__row_column {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+
+            .tabs-finance__row__column__body {
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              gap:600px;
+              align-items: center;
+              width: 1040px;
+              height: 72px;
+              align-items: center;
+              border-bottom: 2px solid #EAF5FF;
+              .tabs-finance__row__column__body_data {
+                padding-right: 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

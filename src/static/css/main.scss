@@ -1,0 +1,52 @@
+@import "./block/nav.scss";
+@import "./block/header.scss";
+@import "./block/footer.scss";
+@import "./block/personalArea.scss";
+@font-face {
+  font-family: "RobotoCondensed-Light";
+  src: url("../fonts/RobotoCondensed-Light.ttf");
+}
+@font-face {
+  font-family: "RobotoCondensed-LightItalic";
+  src: url("../fonts/RobotoCondensed-LightItalic.ttf")
+}
+@font-face {
+  font-family: "RobotoCondensed-BoldItalic";
+  src: url("../fonts/RobotoCondensed-BoldItalic.ttf")
+}
+@font-face {
+  font-family: "RobotoCondensed-Regular";
+  src: url("../fonts/RobotoCondensed-Regular.ttf")
+}
+@font-face {
+  font-family: "RobotoCondensed-Bold" ;
+  src: url("../fonts/RobotoCondensed-Bold.ttf");
+}
+body{
+  padding:0;
+  margin:0;
+  overflow-x:hidden;
+  height: 100vh;
+  width: 100vw;
+  margin-right: 0;
+  .main-container{
+    display: flex;
+    // flex-direction: row;
+    
+    height: 100vh;
+    .container{
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding-left: 300px;
+      width: calc(100% - 370px);
+      
+      .index-main{
+        flex:1 0 auto;
+        margin-left: 50px;
+      }
+      
+      
+    }
+  }
+}

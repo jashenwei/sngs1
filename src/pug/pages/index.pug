@@ -1,0 +1,26 @@
+
+extends ../layout/app
+
+block styles
+  link(rel="stylesheet", href="css/index.css")
+
+block page
+  .main-container
+    include ../chunk/components/nav
+    .container
+      include ../chunk/components/header
+      main.index-main
+        .index-main__personalArea
+          h1 Личный кабинет
+          .index-main__personalArea__tabs
+            .index-main__personalArea__tabs_list
+              div.active-tab
+                .active-tab-border  
+                p Финансы   
+              div Последние транзакции
+              div() Личный менеджер
+              div Общая информация
+             
+            include ../chunk/components/tabs_finance.pug
+          button Пополнить счет 
+      include ../chunk/components/footer

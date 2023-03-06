@@ -24,5 +24,11 @@ module.exports = function() {
             stream: true
         }));
     });
-
+    $.gulp.task('scripts', function() {
+        return $.gulp.src('src/static/js/menu.js')
+        .pipe($.gulp.dest('build/js/'))
+        .pipe($.bs.reload({
+            stream: true
+        }));
+    });
 };

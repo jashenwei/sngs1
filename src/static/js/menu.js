@@ -1,3 +1,43 @@
+// const links = document.querySelectorAll('.header-links__list__a')
+
+// links.forEach(link => {
+//       const header = document.querySelector('.links__list__a__button')
+//         header.addEventListener('click', function () {
+//         document.querySelector('.header-links__links__a__option').classList.toggle('show');
+//         document.querySelector('.image').classList.toggle('rotate')
+//       });
+//       document.addEventListener('click', function (e) {
+//         if (e.target !== document.querySelector('.header-links__list__a__button')) {
+//           document.querySelector('.header-links__links__a__option').classList.remove('show');
+//           document.querySelector('.image').classList.remove('rotate')
+//         }
+//       })
+
+let listElements = document.querySelectorAll('.header-links__links__a');
+
+listElements.forEach(listElement => {
+  listElement.addEventListener('click', () => {
+    console.log('hi')
+    if (listElement.classList.contains('active')) {
+      listElement.classList.remove('active');e
+    } else {
+      listElements.forEach(listE => {
+        listE.classList.remove('active');
+      })
+      listElement.classList.toggle('active');
+    }
+  })
+});
+
+
+
+const navLink = document.querySelectorAll('.header-links__list__class');
+const windowPathname = window.location.pathname;
+navLink.forEach(el => {
+  if (el.href.includes(windowPathname)) {
+    el.classList.add('active');
+  }
+});
 // window.addEventListener('load', function() {
 //   document.addEventListener('click', function(event) {
 //     document.querySelectorAll('.header-links__links__a__option').forEach(function(el) { 
@@ -10,11 +50,6 @@
 //     }   
 //   })
 // })
-
-let menu = document.querySelectorAll('.header-links__list')
-  menu.forEach(item => {
-    let menuLink = item.querySelector('.head')
-  })
 // let menuFirst = document.querySelectorAll('.header__burger-inside-main-menu-first') 
 //   let menuSecondAll = document.querySelectorAll('.header__burger-inside-main-menu-second') 
 //   menuFirst.forEach(item => { 

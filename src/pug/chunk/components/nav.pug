@@ -2,7 +2,7 @@ mixin image_arrow
   .image
     include ../../../static/img/svg/arrow_down.svg
 mixin button(name)  
-  button(type='button'  class='header-links__list__a__button' onclick='rotate()') #{name}
+  button(type='button'  class='header-links__list__a__button') #{name}
 mixin dropdown 
   .header-links__links__a__option_dropdown
 nav#navbar 
@@ -11,9 +11,9 @@ nav#navbar
       include ../../../static/img/svg/logo.svg
     .header-links__list
       .header-links__list__a
-        a.header-links__list__active(href="#") Главная
+        a.header-links__list__active(href="/index.html") Главная
       .header-links__list__a
-        a.header-links__list__class(href="#") Карты
+        a.header-links__list__class(href="/maps.html") Карты
       .header-links__list__a
         .header-links_list_a_button_block 
           +button('Финансы')

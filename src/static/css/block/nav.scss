@@ -14,7 +14,7 @@ nav {
     justify-content: flex-start;
     width: 300px;
     background: $header-background;
-    
+
     a {
       color: #FFFFFF;
       text-decoration: none;
@@ -96,9 +96,11 @@ nav {
 
     .show {
       display: block;
-
+      
     }
-
+    .rotate{
+      transform: rotate(180deg);
+    }
     .header-links__list__active {
       font-family: $robotoBold;
       font-weight: 700;

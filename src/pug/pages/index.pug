@@ -15,12 +15,16 @@ block page
           .index-main__personalArea__tabs
             .index-main__personalArea__tabs_list
               div.active-tab
-                .active-tab-border  
-                p Финансы   
-              div Последние транзакции
-              div() Личный менеджер
-              div Общая информация
-             
+                .active-tab-border
+              a(class="menu-link active_tab", data-block-id="block1", href="#") Финансы
+              a(class="menu-link", data-block-id="block2", href="#") Последние транзакции   
+              a(class="menu-link", data-block-id="block3", href="#") Личный менеджер
+              a(class="menu-link", data-block-id="block4", href="#") Общая информация     
+          #block1.menu-block.active    
             include ../chunk/components/tabs_finance.pug
-          button Пополнить счет 
+          #block2.menu-block
+            include ../chunk/components/last_transaction.pug
+          #block3.menu-block 
+            include ../chunk/components/personal_manager.pug 
+            
       include ../chunk/components/footer

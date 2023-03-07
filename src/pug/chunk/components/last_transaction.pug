@@ -1,0 +1,52 @@
+.last-transaction  
+  table 
+    tr 
+      th Тип транзакции
+      th Сумма
+      th Дата
+      th Пользователь
+    tr
+      td
+        .last-transaction__section
+          include ../../../static/img/svg/refueling.svg
+          .last-transaction__section__desc
+            .semibold Заправка
+            p ул.Чиряева, 3 
+      td -1000 ₽
+      td.last-transaction__section__date 10.12.2022
+      td 
+        .last-transaction__user
+          div.last-transaction__user__name Сидоров Г.А
+          p №1234 567890
+    tr
+      td
+        .last-transaction__section
+          include ../../../static/img/svg/purchase.svg
+          .last-transaction__section__desc
+            .semibold Покупка в магазине
+            p ул.Чиряева, 3 
+      td -1000 ₽
+      td.last-transaction__section__date 10.12.2022
+      td 
+        .last-transaction__user
+          div.last-transaction__user__name Сидоров Г.А
+          p №1234 567890
+    tr
+      td
+        .last-transaction__section
+          include ../../../static/img/svg/into.svg
+          .last-transaction__section_desc2
+            .semibold Внесение средств
+      td +2000 ₽
+      td.last-transaction__section__date 10.12.2022
+      td.semibold Ваша транзакции
+    tr
+      td
+        .last-transaction__section
+          include ../../../static/img/svg/conc.svg
+          .last-transaction__section_desc2
+            .semibold Вывод средств
+      td -5000 ₽
+      td.last-transaction__section__date 10.12.2022
+      td.semibold Ваша транзакции
+button История транзакции 

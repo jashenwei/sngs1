@@ -7,6 +7,7 @@ $robotoRegular: 'RobotoCondensed-Regular';
   justify-content: center;
   align-items: center;
   gap: 50px;
+  font-size: 20px;
 
   h1 {
     font-family: $robotoBold;
@@ -26,6 +27,7 @@ $robotoRegular: 'RobotoCondensed-Regular';
     font-family: $robotoRegular;
     font-size: 20px;
     margin-bottom: 50px;
+    margin-top: 40px;
   }
 
   .tabs-finance {
@@ -41,7 +43,7 @@ $robotoRegular: 'RobotoCondensed-Regular';
       tr {
         border-bottom: 2px solid #EAF5FF;
         height: 98px;
-        
+
         th {
           padding: 0 0 0 20px;
           font-size: 24px;
@@ -49,7 +51,8 @@ $robotoRegular: 'RobotoCondensed-Regular';
           height: 44px;
           margin-bottom: 20px;
           font-family: $robotoRegular;
-          .s{
+
+          .s {
             padding-left: 250px;
           }
         }
@@ -57,11 +60,13 @@ $robotoRegular: 'RobotoCondensed-Regular';
         td {
           font-family: $robotoRegular;
           padding: 0 0 0 20px;
-          .s{
+
+          .s {
             padding-left: 250px;
           }
         }
       }
+
       tr:nth-child(1) {
         background: #EAF5FF;
         width: 520px;
@@ -69,7 +74,7 @@ $robotoRegular: 'RobotoCondensed-Regular';
         text-align: left;
 
       }
-      
+
       .semibold {
         font-family: $robotoBold;
       }
@@ -83,12 +88,25 @@ $robotoRegular: 'RobotoCondensed-Regular';
     align-items: center;
     padding: 0;
     margin: 0;
-
+    a{
+      border:none;
+      background: none;
+      text-decoration: none;
+      font-size: 24px;
+      font-family: $robotoRegular;
+      color: black;
+      padding: 0;
+      margin: 0;
+    }
+    .active_tab{
+      color: #0078D2;
+      border-bottom: 2.5px solid #0078D2;
+    }
     .index-main__personalArea__tabs_list {
       display: flex;
       flex-direction: row;
       font-size: 24px;
-      width: 856px;
+      width: 876px;
       height: 44px;
       gap: 40px;
       align-items: center;
@@ -97,7 +115,7 @@ $robotoRegular: 'RobotoCondensed-Regular';
 
       .active-tab {
         color: #0078D2;
-
+        
         .active-tab-border {
           margin-top: 20px;
         }
@@ -105,62 +123,21 @@ $robotoRegular: 'RobotoCondensed-Regular';
         border-bottom: 2.5px solid #0078D2;
       }
     }
-
+    
     .tabs-finance {
       display: flex;
       flex-direction: row;
       font-size: 20px;
       margin-top: 60px;
-
-
-
-      .tabs-finance__row {
-        display: flex;
-        flex-direction: column;
-        gap: 35px;
-        font-family: $robotoRegular;
-
-        .tabs-finance__row_head {
-          display: flex;
-          flex-direction: row;
-          gap: 600px;
-          background: #EAF5FF;
-          width: 1040px;
-          height: 72px;
-          align-items: center;
-          padding-left: 20px;
-        }
-
-        .tabs-finance__row_body {
-          display: flex;
-          flex-direction: row;
-          gap: 190px;
-          padding-left: 20px;
-
-          .tabs-finane__row_column {
-            display: flex;
-            flex-direction: column;
-            gap: 35px;
-
-            .tabs-finance__row__column__body {
-              display: flex;
-              flex-direction: row;
-              justify-content: flex-start;
-              gap: 600px;
-              align-items: center;
-              width: 1040px;
-              height: 72px;
-              align-items: center;
-              border-bottom: 2px solid #EAF5FF;
-
-              .tabs-finance__row__column__body_data {
-                padding-right: 40px;
-              }
-            }
-          }
-        }
-      }
     }
   }
 
+}
+.menu-block {
+  display: none;
+}
+
+/* Show the block for the active link */
+.menu-block.active {
+  display: block;
 }

@@ -78,7 +78,9 @@ nav {
     .header-links__links__a__option {
       display: none;
     }
-
+    .header-links__links__a__option .active{
+      display: block;
+    }
     .header-links__list__a__dropdown {
       padding-left: 30px;
       width: 179px;
@@ -101,7 +103,7 @@ nav {
     .rotate{
       transform: rotate(180deg);
     }
-    .header-links__list__active {
+    a:is(:link, :active, :visited).active {
       font-family: $robotoBold;
       font-weight: 700;
       display: flex;

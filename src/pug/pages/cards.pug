@@ -1,0 +1,52 @@
+
+extends ../layout/app
+
+block styles
+  link(rel="stylesheet", href="css/index.css")
+
+block page
+  .main-container
+    include ../chunk/components/nav
+    .container
+      include ../chunk/components/header
+      main.index-main
+        .cards-container
+          h1 Карты
+          .cards-container-main 
+            .cards-container-main__cards
+              .cards-container-main__cards__select
+                .status
+                  p Статус
+                  include ../../static/img/svg/arrow_down_black_forCards.svg
+                .type 
+                  p Тип карты
+                  include ../../static/img/svg/arrow_down_black_forCards.svg
+              .cards-container-main__cards__all
+                h1 Действия
+                .cards-container-main__cards__all__options 
+                  .cards-container-main__cards__all__option 
+                    include ../../static/img/svg/money.svg
+                    p Оплата услуг
+                  .cards-container-main__cards__all__option
+                    include ../../static/img/svg/add-card.svg
+                    p Заказать карты
+                  .cards-container-main__cards__all__option
+                    include ../../static/img/svg/group-add.svg
+                    p Добавить группу
+                  .cards-container-main__cards__all__option
+                    include ../../static/img/svg/group.svg
+                    p Переименовать группу
+                  .cards-container-main__cards__all__option
+                    include ../../static/img/svg/group-add.svg
+                    p Добавить в группу
+                  .cards-container-main__cards__all__option
+                    include ../../static/img/svg/group-off.svg
+                    p Удалить группу
+                  .cards-container-main__cards__all__option
+                    include ../../static/img/svg/block.svg
+                    p Заблокировать
+                  .cards-container-main__cards__all__option
+                    include ../../static/img/svg/unblock.svg
+                    p Разблокировать
+            .cards-container-main__actions
+      include ../chunk/components/footer

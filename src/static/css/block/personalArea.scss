@@ -28,6 +28,7 @@ $robotoRegular: 'RobotoCondensed-Regular';
     font-size: 20px;
     margin-bottom: 50px;
     margin-top: 40px;
+    margin-left: 34%;
   }
 
   .tabs-finance {
@@ -43,7 +44,7 @@ $robotoRegular: 'RobotoCondensed-Regular';
       tr {
         border-bottom: 2px solid #EAF5FF;
         height: 98px;
-
+        
         th {
           padding: 0 0 0 20px;
           font-size: 24px;
@@ -60,7 +61,7 @@ $robotoRegular: 'RobotoCondensed-Regular';
         td {
           font-family: $robotoRegular;
           padding: 0 0 0 20px;
-
+          
           .s {
             padding-left: 250px;
           }
@@ -74,7 +75,7 @@ $robotoRegular: 'RobotoCondensed-Regular';
         text-align: left;
 
       }
-
+      
       .semibold {
         font-family: $robotoBold;
       }

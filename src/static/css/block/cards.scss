@@ -8,7 +8,15 @@ $robotoRegular: 'RobotoCondensed-Regular';
   flex-direction: column;
   margin-top: 50px;
   gap: 30px;
-  
+
+  .actived {
+    color: #119B14;
+  }
+
+  .blocked {
+    color: #FF0000;
+  }
+
   h1 {
     font-family: $robotoBold;
     font-size: 48px;
@@ -24,22 +32,151 @@ $robotoRegular: 'RobotoCondensed-Regular';
       flex-direction: row;
       gap: 40px;
 
-      .cards-container-main__cards__select {
-        display: flex;
-        flex-direction: row;
-        gap: 40px;
+      .cards-container-main__cards__myCards__number {
+        color: #0078D2;
+        font-family: $robotoBold;
+      }
 
-        .status,
-        .type {
-          color: #B8B8B8;
-          font-size: 22px;
+      .cards-container-main__cards__block {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+
+        .cards-container-main__cards__select {
           display: flex;
           flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          border-bottom: 2px solid #0078D2;
-          width: 320px;
-          height: 45px;
+          gap: 40px;
+
+          .status,
+          .type {
+            color: #B8B8B8;
+            font-size: 22px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #0078D2;
+            width: 320px;
+            height: 45px;
+          }
+        }
+
+        .cards-container-main__cards__myCards {
+          width: 680px;
+
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 20px;
+
+            tr:nth-child(1) {
+              background: #EAF5FF;
+              height: 72px;
+
+            }
+
+            tr {
+              border-bottom: 2px solid #EAF5FF;
+              height: 98px;
+              width: 100%;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+
+              th:nth-child(1),
+              td:nth-child(1) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 72px;
+              }
+
+              th:nth-child(2),
+              td:nth-child(2) {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                width: 234px;
+              }
+
+              th:nth-child(3),
+              td:nth-child(3) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 200px;
+              }
+
+              th:nth-child(4),
+              td:nth-child(4) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 140px;
+              }
+
+              th {
+                font-family: $robotoRegular;
+                padding: 0;
+
+              }
+
+              .cards-container-main__cards__myCards__checkbox {
+                display: flex;
+                align-items: center;
+
+                input[type="checkbox"] {
+                  /* Add if not using autoprefixer */
+                  -webkit-appearance: none;
+                  /* Remove most all native input styles */
+                  appearance: none;
+                  /* For iOS < 15 */
+                  background-color: var(--form-background);
+                  /* Not removed via appearance */
+                  margin: 0;
+
+                  font: inherit;
+                  color: currentColor;
+                  width: 1.15em;
+                  height: 1.15em;
+                  border: 0.15em solid currentColor;
+                  border-radius: 0.15em;
+                  transform: translateY(-0.075em);
+
+                  display: grid;
+                  place-content: center;
+                }
+
+                input[type="checkbox"]::before {
+                  content: "";
+                  width: 0.65em;
+                  height: 0.65em;
+                  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+                  transform: scale(0);
+                  transform-origin: bottom left;
+                  transition: 120ms transform ease-in-out;
+                  box-shadow: inset 1em 1em var(--form-control-color);
+                  /* Windows High Contrast Mode */
+                  background-color: #0078D2;
+                }
+
+                input[type="checkbox"]:checked::before {
+                  transform: scale(1);
+                }
+
+                input[type="checkbox"]:disabled {
+                  --form-control-color: var(--form-control-disabled);
+
+                  color: var(--form-control-disabled);
+                  cursor: not-allowed;
+                }
+              }
+
+              td {
+                padding: 0;
+              }
+            }
+          }
         }
       }
 
@@ -52,8 +189,14 @@ $robotoRegular: 'RobotoCondensed-Regular';
         gap: 30px;
         justify-content: center;
         padding-left: 31px;
+        padding-top: 50px;
+
         h3 {
           font-size: 28px;
+          line-height: 42px;
+          font-family: $robotoBold;
+          margin: 0;
+          padding: 0;
         }
 
         .cards-container-main__cards__all__options {
@@ -61,19 +204,136 @@ $robotoRegular: 'RobotoCondensed-Regular';
           flex-direction: column;
           align-items: flex-start;
           padding: 0 0 0 0;
+          gap: 25px;
+
+          .modal {
+            display: none;
+            /* Скрыто по умолчанию */
+            position: fixed;
+            /* Оставаться на месте */
+            z-index: 1;
+            /* Сидеть на вершине */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Полная ширина */
+            height: 100%;
+            /* Полная высота */
+            overflow: auto;
+            /* Включите прокрутку, если это необходимо */
+            background-color: rgb(0, 0, 0);
+            /* Цвет запасной вариант */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Черный с непрозрачностью */
+          }
+
+          /* Модальное содержание/коробка */
+          .modal-content {
+           
+            background-color: #fefefe;
+            margin: 15% auto;
+            /* 15% сверху и по центру */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 764px;
+            /* Может быть больше или меньше, в зависимости от размера экрана */
+            height: 361px;
+
+            .modal-content__action {
+              padding-top: 50px;
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+              justify-content: center;
+              align-items: center;
+              width: 700px;
+              h3{
+                font-size: 36px;
+              }
+              input {
+                margin-top: 30px;
+                font-size: 22px;
+                font-family: $robotoRegular;
+                text-decoration: none;
+                outline: none;
+                border: none;
+                border-bottom: 2px solid #0078D2;
+                width: 676px;
+              }
+
+              .modal-content__action__buttons {
+                
+                display: flex;
+                gap: 20px;
+                margin-top:30px;
+                .modal-content__action__buttons__add {
+                  width: 220px;
+                  height: 60px;
+                  background: #B8B8B8;
+                  border-radius: 5px;
+                  color: #fff;
+                  border: none;
+                  font-size: 20px;
+                  font-family: $robotoRegular;
+                }
+
+                .modal-content__action__buttons__add:hover {
+                  background: #0078D2;
+                  transition: all 0.9s ease-out;
+                }
+
+                .modal-content__action__buttons__cancel {
+                  width: 220px;
+                  height: 60px;
+                  background: none;
+                  border-radius: 5px;
+                  border: 2px solid #0078D2;
+                  color: #0078D2;
+                  font-size: 20px;
+                  font-family: $robotoRegular;
+                }
+              }
+            }
+          }
+
+          /* Кнопка закрытия */
+          .modal-content__close {
           
+            
+            float: right;
+
+            
+            .close:hover,
+            .close:focus {
+              
+              cursor: pointer;
+            }
+          }
 
           .cards-container-main__cards__all__option {
+            padding: 0;
             display: flex;
             flex-direction: row;
             align-items: center;
             gap: 10px;
-            font-family:$robotoBold;
-            font-size: 20px;
+
+            button {
+              border: none;
+              background: none;
+              font-size: 20px;
+              padding: 0;
+              font-family: $robotoBold;
+            }
+
+            button:hover,
+            button:focus {
+              cursor: pointer;
+            }
           }
         }
 
       }
     }
   }
+
 }

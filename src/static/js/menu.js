@@ -9,7 +9,6 @@ navLink.forEach(el => {
     el.classList.remove('active');
   }
 });
-
 //выпадающий список nav
 window.addEventListener('load', function () {
   document.addEventListener('click', function (event) {
@@ -56,3 +55,31 @@ menuLinks.forEach(link => {
   });
 
 });
+
+
+var modal1 = document.getElementById("myModal1");
+var modal2 = document.getElementById("myModal2");
+// Получить кнопку, которая открывает модальный
+var btn1 = document.getElementById("myBtn1");
+var btn2 = document.getElementById("myBtn2");
+// Получить элемент <span>, который закрывает модальный
+var span = document.getElementsByClassName("close")[0];
+
+// Когда пользователь нажимает на кнопку, откройте модальный
+btn1.onclick = function() {
+  modal1.style.display = "block";
+}
+
+// Когда пользователь нажимает на <span> (x), закройте модальное окно
+span.onclick = function() {
+  modal1.style.display = "none";
+ 
+}
+
+// Когда пользователь щелкает в любом месте за пределами модального, закройте его
+window.onclick = function(event) {
+  if (event.target == modal1) {
+    modal1.style.display = "none";
+  }
+  
+}

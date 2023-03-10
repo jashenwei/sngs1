@@ -1,0 +1,32 @@
+
+extends ../layout/app
+
+block styles
+  link(rel="stylesheet", href="css/index.css")
+
+block page
+  .main-container
+    include ../chunk/components/nav
+    .container
+      include ../chunk/components/header
+      main.index-main
+        .supports
+          h1 Поддержка
+          p Если вы нашли ошибки в работе сервиса или у вас есть предложения по его улучшения, то пожалуйста заполните форму
+          .supports__select
+            p Тема обращения
+            include ../../static/img/svg/arrow_down_black_forCards.svg
+          .supports__email
+            p E-mail*  
+            input#support_email(type="text", name="", placeholder="Введите ваш E-mail")
+          .supports__number
+            p Телефон*  
+            input#support_number(type="text", name="", placeholder="Введите ваш номер телефона")
+          .supports__message 
+            h5 Текст сообщения
+            textarea(name="", cols="30", rows="10", placeholder="Введите ваш запрос")
+          .supports__files  
+            h5 Вложения
+            input#file-input(type="file", name="" multiple)
+            label(for="file-input") Прикрепить файл
+      include ../chunk/components/footer

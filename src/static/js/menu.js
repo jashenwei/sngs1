@@ -56,30 +56,95 @@ menuLinks.forEach(link => {
 
 });
 
+const menuButtons = document.querySelectorAll('.menu-button');
+const modals = document.querySelectorAll('.modal');
 
-var modal1 = document.getElementById("myModal1");
-var modal2 = document.getElementById("myModal2");
-// Получить кнопку, которая открывает модальный
-var btn1 = document.getElementById("myBtn1");
-var btn2 = document.getElementById("myBtn2");
-// Получить элемент <span>, который закрывает модальный
-var span = document.getElementsByClassName("close")[0];
 
-// Когда пользователь нажимает на кнопку, откройте модальный
-btn1.onclick = function() {
-  modal1.style.display = "block";
-}
+// Добавляем обработчик событий на каждую кнопку меню
+menuButtons.forEach((button, index) => {
+  // При клике на кнопку меню
+  button.addEventListener('click', () => {
+    // Делаем модальное окно активным
+    modals[index].classList.add('active');
+  });
 
-// Когда пользователь нажимает на <span> (x), закройте модальное окно
-span.onclick = function() {
-  modal1.style.display = "none";
- 
-}
+  // При клике на кнопку "Отменить"
+  modals[index].querySelector('.modal-content__action__buttons__cancel').addEventListener('click', () => {
+    // Скрываем модальное окно
+    modals[index].classList.remove('active');
+  });
 
-// Когда пользователь щелкает в любом месте за пределами модального, закройте его
-window.onclick = function(event) {
-  if (event.target == modal1) {
-    modal1.style.display = "none";
-  }
-  
-}
+  // При клике на кнопку "Закрыть"
+  modals[index].querySelector('.close-btn').addEventListener('click', () => {
+    // Скрываем модальное окно
+    modals[index].classList.remove('active');
+  });
+});
+// Добавляем обработчик событий на каждое модальное окно
+modals.forEach((modal) => {
+  // При клике на фон модального окна
+  modal.addEventListener('click', (event) => {
+    // Если клик был на самом фоне (не на контенте модального окна)
+    if (event.target === modal) {
+      // Скрываем модальное окно
+      modal.classList.remove('active');
+    }
+  });
+});
+
+//выпадающий список
+// Get all dropdown buttons
+const dropdownButtons = document.querySelectorAll('.dropdown-trigger button');
+
+// Loop through dropdown buttons and add event listeners
+dropdownButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Get dropdown menu and toggle 'is-active' class
+    const dropdownMenu = button.parentElement.nextElementSibling;
+    dropdownMenu.classList.toggle('is-active');
+    // Toggle 'is-active' class and rotate arrow icon
+    button.parentElement.classList.toggle('is-active');
+    const arrowIcon = button.querySelector('svg');
+    arrowIcon.classList.toggle('rotate-180');
+  });
+});
+
+// Get all dropdown items
+const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+// Loop through dropdown items and add event listeners
+dropdownItems.forEach(item => {
+  item.addEventListener('click', () => {
+    // Get selected option and set button text
+    const selectedOption = item.textContent;
+    const dropdownButton = item.closest('.dropdown').querySelector('button');
+    dropdownButton.textContent = selectedOption;
+    // Hide dropdown menu
+    const dropdownMenu = item.closest('.dropdown-menu');
+    dropdownMenu.classList.remove('is-active');
+  });
+});
+
+// Add event listener to close dropdown menu when clicking outside of it
+document.addEventListener('click', (event) => {
+  const dropdowns = document.querySelectorAll('.dropdown');
+  dropdowns.forEach(dropdown => {
+    if (!dropdown.contains(event.target)) {
+      dropdown.querySelector('.dropdown-menu').classList.remove('is-active');
+      dropdown.querySelector('.dropdown-trigger').classList.remove('is-active');
+      const arrowIcon = dropdown.querySelector('.dropdown-trigger svg');
+      if (arrowIcon.parentElement.classList.contains('is-active')) {
+        arrowIcon.classList.add('rotate-180');
+      } else {
+        arrowIcon.classList.remove('rotate-180');
+      }
+    }
+  });
+});
+
+//кнопка прикрепите файл
+const fileInput = document.getElementById("file-input");
+fileInput.addEventListener("change", (event) => {
+  const file = event.target.files[0];
+  console.log(`Выбранный файл: ${file.name}`);
+});

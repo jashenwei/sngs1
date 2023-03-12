@@ -1,0 +1,174 @@
+$robotoBold: 'RobotoCondensed-Bold';
+$robotoRegular: 'RobotoCondensed-Regular';
+
+.supports {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: $robotoRegular;
+    font-size: 20px;
+    gap: 20px;
+
+    .custom-file-upload {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background-color: #4CAF50;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .custom-file-upload input[type="file"] {
+        display: none;
+    }
+
+    .rotate-180 {
+        transform: rotate(180deg);
+    }
+    .dropdown{
+        
+        .supports__select {
+            border: none;
+            background: none;
+            width: 680px;
+            height: 55px;
+            font-size: 22px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #0078D2;
+
+            p {
+                color: #B8B8B8;
+            }
+        }
+        .dropdown-menu {
+            position: absolute;
+            z-index: 10;
+            display: none;
+            background-color: #fff;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            width: 680px;
+            overflow-y: auto;
+        }
+        .dropdown-menu.is-active {
+            display: block;
+        }
+
+        .dropdown-content .dropdown-item {
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+            color: #333;
+        }
+
+        .dropdown-content .dropdown-item:hover {
+            background-color: #f9f9f9;
+        }
+    }
+    
+    
+
+    h1 {
+        padding: 0;
+        font-family: $robotoBold;
+        font-size: 48px;
+    }
+
+    .supports__desc {
+        width: 544px;
+        text-align: center;
+    }
+
+    
+
+    .supports__email,
+    .supports__number {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 680px;
+
+        .supports__title {
+            display: flex;
+
+            p,
+            .red {
+                padding: 0;
+                margin: 0;
+                font-size: 18px;
+                color: #0078D2;
+            }
+
+            .red {
+                color: #FF0000;
+            }
+        }
+
+        input {
+            padding: 0;
+            margin: 0;
+            background: none;
+            border: none;
+            border-bottom: 2px solid #0078D2;
+            height: 55px;
+            outline: none;
+            font-size: 22px;
+            font-family: $robotoRegular;
+            color: #000000;
+        }
+    }
+
+    .supports__message {
+        width: 680px;
+
+        h3 {
+            font-family: $robotoBold;
+            font-size: 24px;
+        }
+
+        textarea {
+            padding: 20px 20px 15px 15px;
+            border: none;
+            outline: none;
+            font-family: $robotoRegular;
+            font-size: 22px;
+            width: 680px;
+            max-width: 680px;
+            min-width: 680px;
+            min-height: 200px;
+            background: #EAF5FF;
+            border-radius: 15px;
+        }
+    }
+
+    .supports__buttons {
+        display: flex;
+        gap: 20px;
+        margin: 62px 0 120px 0;
+
+        button {
+            font-size: 20px;
+            font-family: $robotoRegular;
+            border-radius: 5px;
+            width: 220px;
+            height: 60px;
+        }
+
+        .supports__buttons__send {
+            background: #0078D2;
+            color: #fff;
+            border: none;
+        }
+
+        .supports__buttons__clear {
+            border: 2px solid #0078D2;
+            background: none;
+            color: #0078D2;
+        }
+    }
+}

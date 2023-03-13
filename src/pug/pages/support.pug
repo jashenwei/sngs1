@@ -40,13 +40,13 @@ block page
           .supports__message 
             h3 Текст сообщения
             textarea(name="", cols="30", rows="10", placeholder="Введите ваш запрос")
-          .supports__files  
-            h3 Вложения
-            input#file-input(type="file", name="" multiple)
-            label(for="file-input") Прикрепить файл
-          .custom-file-upload
-            input(type='file' id='file-input' accept='.txt, .pdf, .doc, .docx')
-            label(for='file-input') Выбрать файл
+          .supports__files
+            h3 Вложение
+            .suports__files__container
+              include ../../static/img/svg/attach-file.svg
+              .supports__files__container__block
+                input(type='file' id='file-input' accept='.txt, .pdf, .doc, .docx')
+                label(for='file-input') Прикрепить файл
           .supports__buttons
             button.supports__buttons__send Отправить
             button.supports__buttons__clear Очистить

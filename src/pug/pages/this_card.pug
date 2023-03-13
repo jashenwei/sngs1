@@ -1,0 +1,55 @@
+
+extends ../layout/app
+
+block styles
+  link(rel="stylesheet" href="css/index.css")
+
+block page
+  .main-container
+    include ../chunk/components/nav
+    .container
+      include ../chunk/components/header
+      main.index-main
+        .thisCard-container
+          .thisCard-container__main 
+            .thisCard-container__main__block 
+              .thisCard-container__back
+                include ../../static/img/svg/chevron-left.svg
+                a(href="/cards.html").cards-container__backButton Вернуться обратно
+              .thisCard-container__main__block__card
+                .thisCard-container__main__block__card__front
+                  .card__front__head
+                    .card__front__head__logo
+                      include ../../static/img/svg/logo_sngs.svg 
+                    .card__front__head__status
+                      p Активна 
+                  .card__front__body
+                    p Баланс
+                    h1 45 900 ₽
+                  .card__front__footer
+                    p Виртуальная
+                    h5 № 1234 5678 9012 3456 
+                  .card__front__vector
+                .thisCard-container__main__block__card__back
+                  .card__back__vector 
+                  .card__back__footer 
+                    p Сумма трат за январь
+                    h5 4 900 ₽
+              .thisCard-container__main__block__info       
+                .thisCard-container__main__block__info__tabs
+                  .thisCard-container__main__block__info__tabs__list
+                    div.active-tab
+                      .active-tab-border
+                    a(class="menu-link active_tab" data-block-id="block1" href="#") История транзакций 
+                    a(class="menu-link" data-block-id="block2" href="#") Лимиты и ограничения   
+                    a(class="menu-link" data-block-id="block3" href="#") Пользователи    
+                #block1.menu-block.active    
+                  include ../chunk/components/tabs_finance.pug
+                #block2.menu-block
+                  include ../chunk/components/last_transaction.pug
+                #block3.menu-block 
+                  include ../chunk/components/personal_manager.pug
+            .thisCard-container__main__block__actions 
+              //действия
+
+      include ../chunk/components/footer

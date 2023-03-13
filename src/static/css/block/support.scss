@@ -10,26 +10,44 @@ $robotoRegular: 'RobotoCondensed-Regular';
     font-size: 20px;
     gap: 20px;
 
-    .custom-file-upload {
-        display: inline-block;
-        font-size: 16px;
-        font-weight: bold;
-        color: white;
-        background-color: #4CAF50;
-        padding: 10px 20px;
-        cursor: pointer;
-        border-radius: 5px;
+    .supports__files {
+        h3{
+            padding: 0;
+            margin: 0 0 10px 0;
+            font-family: 24px;
+            font-family: $robotoBold;
+        }
+
+        .suports__files__container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 680px;
+
+            .supports__files__block {
+                font-family: $robotoRegular;
+                display: inline-block;
+                font-size: 20px;
+                color: #0078D2;
+                padding: 10px 12px;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+        }
+
     }
 
-    .custom-file-upload input[type="file"] {
+    .supports__files input[type="file"] {
         display: none;
     }
 
     .rotate-180 {
         transform: rotate(180deg);
     }
-    .dropdown{
-        
+
+    .dropdown {
+        position: relative;
+
         .supports__select {
             border: none;
             background: none;
@@ -46,6 +64,7 @@ $robotoRegular: 'RobotoCondensed-Regular';
                 color: #B8B8B8;
             }
         }
+
         .dropdown-menu {
             position: absolute;
             z-index: 10;
@@ -55,6 +74,7 @@ $robotoRegular: 'RobotoCondensed-Regular';
             width: 680px;
             overflow-y: auto;
         }
+
         .dropdown-menu.is-active {
             display: block;
         }
@@ -70,8 +90,8 @@ $robotoRegular: 'RobotoCondensed-Regular';
             background-color: #f9f9f9;
         }
     }
-    
-    
+
+
 
     h1 {
         padding: 0;
@@ -84,7 +104,7 @@ $robotoRegular: 'RobotoCondensed-Regular';
         text-align: center;
     }
 
-    
+
 
     .supports__email,
     .supports__number {

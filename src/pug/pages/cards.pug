@@ -2,7 +2,7 @@
 extends ../layout/app
 
 block styles
-  link(rel="stylesheet", href="css/index.css")
+  link(rel="stylesheet" href="css/index.css")
 
 block page
   .main-container
@@ -23,26 +23,39 @@ block page
                     p Тип карты
                     include ../../static/img/svg/arrow_down_black_forCards.svg
                 .cards-container-main__cards__myCards  
-                  table 
+                  table.table 
                     tr 
                       th 
                         .cards-container-main__cards__myCards__checkbox 
-                          input#check(type="checkbox", name="", class="check")
+                          input#check(type="checkbox" name="" class="check")
                       th Номер
                       th Тип карты
                       th Статус
-                    tr
+                    tr.cards-container-main__cards__myCards__group  <! -- добавление группы в scss display:none; -->
+                      th 
+                        .cards-container-main__cards__myCards__checkbox 
+                          input#check(type="checkbox" name="" class="check")
+                      th 
+                        p Название группы
+                        .cards-container-main__cards__myCards__group__image
+                          button(aria-controls="cards-container-main__cards__myCards__block" aria-haspopup="true") 
+                            include ../../static/img/svg/arrow_down.svg 
+                      th В группе 2 карты
+                    tr.cards-container-main__cards__myCards__block
                       td
                         .cards-container-main__cards__myCards__checkbox 
-                          input#check(type="checkbox", name="", class="check")
-                      td.cards-container-main__cards__myCards__number  1234 5678 9012 3456
+                          input#check(type="checkbox" name="" class="check")
+                      td 
+                        a(href="/this_card.html").cards-container-main__cards__myCards__number  1234 5678 9012 3456
+
                       td Виртуальная
                       td.actived Активна
-                    tr
+                    tr.cards-container-main__cards__myCards__block
                       td 
                         .cards-container-main__cards__myCards__checkbox 
-                          input#check(type="checkbox", name="", class="check")
-                      td.cards-container-main__cards__myCards__number 1234 5678 9012 3478
+                          input#check(type="checkbox" name="" class="check")
+                      td
+                        a(href="/this_card.html").cards-container-main__cards__myCards__number 1234 5678 9012 3478
                       td Пластиковая
                       td.blocked Заблокирована
               .cards-container-main__cards__all
@@ -53,16 +66,16 @@ block page
                     button Оплата услуг
                   .cards-container-main__cards__all__option
                     include ../../static/img/svg/add-card.svg
-                    button Заказать карты
+                    button#btn-1.menu-button Заказать карты
                   .cards-container-main__cards__all__option
                     include ../../static/img/svg/group-add.svg
-                    button#btn-1.menu-button Добавить группу
+                    button#btn-2.menu-button Добавить группу
                   .cards-container-main__cards__all__option
                     include ../../static/img/svg/group.svg
-                    button#btn-2.menu-button Переименовать группу
+                    button#btn-3.menu-button Переименовать группу
                   .cards-container-main__cards__all__option
                     include ../../static/img/svg/group-add.svg
-                    button Добавить в группу
+                    button#btn-4.menu-button Добавить в группу
                   .cards-container-main__cards__all__option
                     include ../../static/img/svg/group-off.svg
                     button Удалить группу
@@ -76,24 +89,68 @@ block page
                     .modal-content
                       .modal-content__close
                         span.close-btn 
+                          include ../../static/img/svg/close.svg        
+                      .modal-content__action
+                        h3 Заказ топливных карт
+                        .modal-content__action__block 
+                          p Теперь вы можете выпустить топливную карту мгновенно и совершенно бесплатно. Все, что вам нужно для этого — мобильный телефон на основе Android или iOS.
+                          h4 Для выпуска виртуальной карты необходимо выполнить ряд шагов
+                          .modal-content__action__block__steps
+                            .modal-content__action__block__step
+                              .modal-content__action__block__step__title Шаг 1
+                              .modal-content__action__block__step__block В разделе «Пользователи» отправьте водителю приглашение зарегистрироваться
+                            .modal-content__action__block__step
+                              .modal-content__action__block__step__title Шаг 2
+                              .modal-content__action__block__step__block Водителю придет ссылка, по которой нужно пройти регистрацию и установить мобильное приложение для Android или iOS
+                            .modal-content__action__block__step
+                              .modal-content__action__block__step__title Шаг 3
+                              .modal-content__action__block__step__block Теперь водитель сможет самостоятельно выпустить виртуальную карту в мобильном приложении
+                        .modal-content__action__buttons
+                          button.modal-content__action__buttons__release Выпустить виртуальную карту – 0₽
+                          button.modal-content__action__buttons__order Заказать пластиковую карту – 750₽
+                          button.modal-content__action__buttons__cancel(style="display:none;")         
+                  .modal#modal-2
+                    .modal-content
+                      .modal-content__close
+                        span.close-btn 
                           include ../../static/img/svg/close.svg
                       .modal-content__action
                         h3 Добавление группы
-                        input(type="text", placeholder="Введите название группы")
+                        input(type="text" placeholder="Введите название группы")
                         .modal-content__action__buttons
                           button.modal-content__action__buttons__add Добавить
                           button.modal-content__action__buttons__cancel Отменить
-                  .modal#modal-2
+                  .modal#modal-3
                     .modal-content
                       .modal-content__close
                         span.close-btn 
                           include ../../static/img/svg/close.svg        
                       .modal-content__action
                         h3 Переименование группы
-                        input(type="text", placeholder="Введите название группы")
+                        input(type="text" placeholder="Введите название группы")
                         .modal-content__action__buttons
                           button.modal-content__action__buttons__add Переименовать
-                          button.modal-content__action__buttons__cancel Отменить      
+                          button.modal-content__action__buttons__cancel Отменить
+                  .modal#modal-4
+                    .modal-content
+                      .modal-content__close
+                        span.close-btn 
+                          include ../../static/img/svg/close.svg        
+                      .modal-content__action
+                        h3 Добавление в группу
+                        .dropdown
+                          .dropdown-trigger
+                            button(aria-controls="dropdown-menu" aria-haspopup="true").supports__select  
+                              p Название группы
+                              include ../../static/img/svg/arrow_down_black_forCards.svg
+                          .dropdown-menu#dropdown-menu(role='menu')
+                            .dropdown-content
+                              a.dropdown-item(href='#') Топливные карты
+                              a.dropdown-item(href='#') Личный кабинет
+                        .modal-content__action__buttons
+                          button.modal-content__action__buttons__add Добавить
+                          button.modal-content__action__buttons__cancel Отменить
+
             .cards-container-main__actions
         include ../chunk/components/pagination
       include ../chunk/components/footer

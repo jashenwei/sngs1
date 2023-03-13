@@ -8,6 +8,9 @@ navLink.forEach(el => {
   if (windowPathname === '/') {
     el.classList.remove('active');
   }
+  // if (windowPathname === '/this_card.html'){
+  //   el[1].classList('active');
+  // }
 });
 //выпадающий список nav
 window.addEventListener('load', function () {
@@ -133,6 +136,22 @@ document.addEventListener('click', (event) => {
       dropdown.querySelector('.dropdown-menu').classList.remove('is-active');
       dropdown.querySelector('.dropdown-trigger').classList.remove('is-active');
       const arrowIcon = dropdown.querySelector('.dropdown-trigger svg');
+      if (arrowIcon.parentElement.classList.contains('is-active')) {
+        arrowIcon.classList.add('rotate-180');
+      } else {
+        arrowIcon.classList.remove('rotate-180');
+      }
+    }
+  });
+});
+
+document.addEventListener('click', (event) => {
+  const dropdowns = document.querySelectorAll('.table');
+  dropdowns.forEach(dropdown => {
+    if (!dropdown.contains(event.target)) {
+      dropdown.querySelector('.cards-container-main__cards__myCards__block').classList.remove('is-active');
+      dropdown.querySelector('.cards-container-main__cards__myCards__group__image').classList.remove('is-active');
+      const arrowIcon = dropdown.querySelector('cards-container-main__cards__myCards__group__image svg');
       if (arrowIcon.parentElement.classList.contains('is-active')) {
         arrowIcon.classList.add('rotate-180');
       } else {

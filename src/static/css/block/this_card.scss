@@ -1,0 +1,111 @@
+$robotoBold: 'RobotoCondensed-Bold';
+$robotoRegular: 'RobotoCondensed-Regular';
+
+.thisCard-container__main {
+  margin-top: 42px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+
+  .thisCard-container__back {
+    display: flex;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      font-family: $robotoRegular;
+      font-size: 20px;
+      color: #000000;
+    }
+  }
+
+  .thisCard-container__main__block {
+    display: flex;
+    flex-direction: column;
+    gap: 52px;
+
+    .thisCard-container__main__block__card {
+      display: flex;
+      gap: 40px;
+
+      .thisCard-container__main__block__card__front {
+
+        width: 320px;
+        height: 205px;
+        max-width: 320px;
+        max-height: 205px;
+        background: linear-gradient(270deg, #0072CC 0%, #0082D3 99.82%);
+        border-radius: 12px;
+        color: #fff;
+        font-family: $robotoRegular;
+        gap: 25px;
+        display: flex;
+        flex-direction: column;
+
+        .card__front__head {
+          align-items: center;
+          justify-content: space-between;
+          display: flex;
+          padding: 20px 20px 0 20px;
+
+          .card__front__head__status {
+            width: 69px;
+            height: 30px;
+            background: #119B14;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+          }
+
+        }
+
+        .card__front__body {
+          display: flex;
+          flex-direction: column;
+          padding: 0 20px 0 20px;
+
+          p,
+          h1 {
+            padding: 0;
+            margin: 0;
+          }
+
+          h1 {
+            font-size: 36px;
+            line-height: 100%;
+            font-weight: 500;
+            
+          }
+        }
+
+        .card__front__footer {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 20px 0 20px;
+
+          p,
+          h5 {
+            padding: 0;
+            margin: 0;
+          }
+        }
+      }
+
+      .thisCard-container__main__block__card__back {
+        border-radius: 12px;
+        width: 320px;
+        height: 205px;
+        background: linear-gradient(270deg, #0072CC 0%, #0082D3 99.82%);
+      }
+    }
+  }
+
+  .thisCard-container__main__block__actions {
+    width: 320px;
+    height: 554px;
+    background: #EAF5FF;
+    border-radius: 5px;
+  }
+}

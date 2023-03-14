@@ -1,0 +1,61 @@
+.this-card-limits {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 88px;
+
+  .this-card-limits__message {
+    
+    p {
+      margin: 0 auto;
+      text-align: center;
+      width: 435px;
+      height: 60px;
+      color: #B8B8B8;
+    }
+  }
+
+  table:nth-child(1) {
+
+    th:nth-child(3){
+       text-align: right;
+       padding-right: 20px;
+    }
+  }
+
+  table {
+    width: 100%;
+    // height: 472px;
+    border-collapse: collapse;
+    display: flex;
+    gap: 40px;
+
+    tr:nth-child(1) {
+      background: #EAF5FF;
+      width: 520px;
+      height: 72px;
+      text-align: left;
+    }
+
+    tr {
+      border-bottom: 2px solid #EAF5FF;
+      height: 98px;
+
+      td {
+        font-family: $robotoRegular;
+        padding: 0 0 0 20px;
+      }
+      
+      th {
+        padding: 0 0 0 20px;
+        font-size: 22px;
+        width: 856px;
+        height: 44px;
+        // margin-bottom: 20px;
+        font-family: $robotoRegular;
+      }
+    }
+
+
+  }
+}

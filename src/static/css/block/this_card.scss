@@ -1,4 +1,6 @@
 $robotoBold: 'RobotoCondensed-Bold';
+$robotoItalic: 'RobotoCondensed-Italic';
+$robotoItalicBold: 'RobotoCondensed-BoldItalic';
 $robotoRegular: 'RobotoCondensed-Regular';
 
 .thisCard-container__main {
@@ -6,7 +8,8 @@ $robotoRegular: 'RobotoCondensed-Regular';
   display: flex;
   flex-direction: row;
   gap: 40px;
-
+  margin-left: 15px;
+  margin-bottom: 120px;
   .thisCard-container__back {
     display: flex;
     align-items: center;
@@ -22,6 +25,7 @@ $robotoRegular: 'RobotoCondensed-Regular';
   .thisCard-container__main__block {
     display: flex;
     flex-direction: column;
+
     gap: 52px;
 
     .thisCard-container__main__block__card {
@@ -35,12 +39,13 @@ $robotoRegular: 'RobotoCondensed-Regular';
         max-width: 320px;
         max-height: 205px;
         background: linear-gradient(270deg, #0072CC 0%, #0082D3 99.82%);
-        border-radius: 12px;
+        border-radius: 20px;
         color: #fff;
         font-family: $robotoRegular;
         gap: 25px;
         display: flex;
         flex-direction: column;
+        position: relative;
 
         .card__front__head {
           align-items: center;
@@ -48,7 +53,18 @@ $robotoRegular: 'RobotoCondensed-Regular';
           display: flex;
           padding: 20px 20px 0 20px;
 
+
+          .card__front__head__logo {
+            margin-top: 5px;
+
+            svg {
+              width: 166px;
+              max-height: 30px;
+            }
+          }
+
           .card__front__head__status {
+
             width: 69px;
             height: 30px;
             background: #119B14;
@@ -61,51 +77,225 @@ $robotoRegular: 'RobotoCondensed-Regular';
         }
 
         .card__front__body {
+          z-index: 2;
           display: flex;
           flex-direction: column;
           padding: 0 20px 0 20px;
+          gap: 4px;
+
+          p {
+            font-size: 16px;
+            font-family: $robotoRegular;
+            font-weight: 400;
+          }
 
           p,
-          h1 {
+          h2 {
             padding: 0;
             margin: 0;
           }
 
-          h1 {
+          h2 {
             font-size: 36px;
             line-height: 100%;
-            font-weight: 500;
-            
+            font-weight: 600;
+
           }
         }
 
         .card__front__footer {
+          z-index: 2;
           display: flex;
           align-items: center;
           justify-content: space-between;
           padding: 0 20px 0 20px;
 
+          p {
+            font-family: $robotoItalic;
+          }
+
+          h5 {
+            font-family: $robotoItalicBold;
+          }
+
           p,
           h5 {
+            font-size: 16px;
             padding: 0;
             margin: 0;
           }
         }
+
+        .card__front__vector {
+          z-index: 1;
+          position: absolute;
+          top: 60%;
+          left: 4%;
+
+        }
       }
 
       .thisCard-container__main__block__card__back {
-        border-radius: 12px;
+        border-radius: 20px;
         width: 320px;
         height: 205px;
+        position: relative;
         background: linear-gradient(270deg, #0072CC 0%, #0082D3 99.82%);
+
+        .card__back__vector {
+          z-index: 1;
+          position: absolute;
+          display: block;
+          height: 50px;
+          width: 320px;
+          margin-top: 30px;
+          background: #000000;
+        }
+
+        .card__back__footer {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          padding: 0px;
+          color: #EAF5FF;
+          margin-top: 131px;
+          margin-left: 20px;
+
+          p,
+          h2 {
+            padding: 0;
+            margin: 0;
+          }
+
+          p {
+            font-size: 16px;
+            font-family: $robotoRegular;
+          }
+
+          h2 {
+            font-weight: 600;
+            font-size: 36px;
+            font-family: $robotoRegular;
+          }
+        }
       }
     }
   }
 
+  .thisCard-container__main__block__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    font-size: 20px;
+    width: 680px;
+    .thisCard-container__main__block__info__tabs {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 680px;
+      padding: 0;
+      margin: 0;
+
+      a {
+        border: none;
+        background: none;
+        text-decoration: none;
+        font-size: 24px;
+        font-family: $robotoRegular;
+        color: black;
+        padding: 0;
+        margin: 0;
+      }
+
+      .active_tab {
+        color: #0078D2;
+        height: 44px;
+        border-bottom: 2.5px solid #0078D2;
+        font-weight: 600;
+      }
+
+      .thisCard-container__main__block__info__tabs__list {
+        display: flex;
+        flex-direction: row;
+        font-size: 24px;
+        
+        height: 44px;
+        gap: 40px;
+        padding: 0;
+        margin: 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+        font-family: $robotoRegular;
+      }
+    }
+
+  }
+
   .thisCard-container__main__block__actions {
-    width: 320px;
-    height: 554px;
     background: #EAF5FF;
-    border-radius: 5px;
+    width: 320px;
+    height: 504px;
+    margin-top: 78px;
+    padding-left: 31px;
+    padding-top: 50px;
+
+    .thisCard-container__main__block__actions__container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      justify-content: center;
+      align-items: flex-start;
+
+      h3 {
+        font-size: 28px;
+        line-height: 42px;
+        font-family: $robotoBold;
+        margin: 0;
+        padding: 0;
+      }
+
+      .block__actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        margin: 0;
+        gap: 25px;
+        height: 390px;
+
+        .block__actions__option {
+          padding: 0;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 0;
+          margin: 0;
+          gap: 10px;
+
+          button {
+            border: none;
+            background: none;
+            font-size: 20px;
+            padding: 0;
+            font-family: $robotoBold;
+            text-align: left;
+          }
+
+          .button_translation {
+            width: 179px;
+            height: 48px;
+            text-align: left;
+          }
+
+          button:hover,
+          button:focus {
+            cursor: pointer;
+          }
+        }
+      }
+    }
   }
 }

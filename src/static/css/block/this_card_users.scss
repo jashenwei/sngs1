@@ -1,0 +1,37 @@
+$robotoBold: 'RobotoCondensed-Bold';
+$robotoRegular: 'RobotoCondensed-Regular';
+.this-card-users{
+  width: 680px;
+  table{
+    width: 680px;
+    border-collapse: collapse;
+    display: flex;
+    gap: 50px;
+    font-size: 20px;
+    tr:nth-child(1) {
+      background: #EAF5FF;
+      width: 680px;
+      height: 72px;
+      text-align: left;
+    }
+    tr{
+      border-bottom: 2px solid #EAF5FF;
+      height: 98px;
+      .semibold{
+        font-family: $robotoBold;
+      }
+      td{
+        padding: 0 0 0 20px;
+        font-family: $robotoRegular;
+      }
+      th{
+
+        width: 680px;
+        padding: 0 0 0 20px;
+        font-family: $robotoBold;
+      }
+    }
+    
+  }
+}  
+  

@@ -1,0 +1,40 @@
+.thisCard-history
+  table 
+    tr 
+      th.s Тип транзакции
+      th Сумма
+      th Дата
+    tr
+      td
+        .thisCard-history__section
+          include ../../../static/img/svg/refueling.svg
+          .thisCard-history__section__desc
+            .semibold Заправка
+            p ул.Чиряева, 3 
+      td -1000 ₽
+      td.thisCard-history__section__date 10.12.2022
+    tr
+      td
+        .thisCard-history__section
+          include ../../../static/img/svg/purchase.svg
+          .thisCard-history__section__desc
+            .semibold Покупка в магазине
+            p ул.Чиряева, 3 
+      td -1000 ₽
+      td.thisCard-history__section__date 10.12.2022
+    tr
+      td
+        .thisCard-history__section
+          include ../../../static/img/svg/into.svg
+          .thisCard-history__section_desc2
+            .semibold Внесение средств
+      td +2000 ₽
+      td.thisCard-history__section__date 10.12.2022
+    tr
+      td
+        .thisCard-history__section
+          include ../../../static/img/svg/conc.svg
+          .thisCard-history__section_desc2
+            .semibold Вывод средств
+      td -5000 ₽
+      td.thisCard-history__section__date 10.12.2022

@@ -20,36 +20,57 @@ block page
                 .thisCard-container__main__block__card__front
                   .card__front__head
                     .card__front__head__logo
-                      include ../../static/img/svg/logo_sngs.svg 
+                      include ../../static/img/svg/logo.svg 
                     .card__front__head__status
                       p Активна 
                   .card__front__body
                     p Баланс
-                    h1 45 900 ₽
+                    h2 45 900 ₽
                   .card__front__footer
                     p Виртуальная
                     h5 № 1234 5678 9012 3456 
                   .card__front__vector
+                    include ../../static/img/svg/vector_for_cards.svg 
                 .thisCard-container__main__block__card__back
                   .card__back__vector 
                   .card__back__footer 
                     p Сумма трат за январь
-                    h5 4 900 ₽
+                    h2 4 900 ₽
               .thisCard-container__main__block__info       
                 .thisCard-container__main__block__info__tabs
-                  .thisCard-container__main__block__info__tabs__list
-                    div.active-tab
-                      .active-tab-border
+                  .thisCard-container__main__block__info__tabs__list    
                     a(class="menu-link active_tab" data-block-id="block1" href="#") История транзакций 
                     a(class="menu-link" data-block-id="block2" href="#") Лимиты и ограничения   
                     a(class="menu-link" data-block-id="block3" href="#") Пользователи    
                 #block1.menu-block.active    
-                  include ../chunk/components/tabs_finance.pug
+                  include ../chunk/components/this_card_history.pug
                 #block2.menu-block
-                  include ../chunk/components/last_transaction.pug
+                  include ../chunk/components/this_card_limits.pug
                 #block3.menu-block 
-                  include ../chunk/components/personal_manager.pug
-            .thisCard-container__main__block__actions 
-              //действия
-
+                  include ../chunk/components/this_card_users.pug
+            .thisCard-container__main__block__actions
+              .thisCard-container__main__block__actions__container 
+                h3 Действия
+                .block__actions  
+                  .block__actions__option 
+                    include ../../static/img/svg/money.svg
+                    button Оплата услуг
+                  .block__actions__option 
+                    include ../../static/img/svg/person-add.svg
+                    button Прикрепить пользователя                
+                  .block__actions__option 
+                    include ../../static/img/svg/instant-transfer.svg
+                    button.button_translation Перевод между картой и договором
+                  .block__actions__option 
+                    include ../../static/img/svg/report.svg
+                    button Заказать отчет по карте
+                  .block__actions__option 
+                    include ../../static/img/svg/credit-card-sync.svg
+                    button Изменить тип карты
+                  .block__actions__option 
+                    include ../../static/img/svg/maximize.svg
+                    button Создать лимит
+                  .block__actions__option 
+                    include ../../static/img/svg/block.svg
+                    button Заблокировать                                
       include ../chunk/components/footer

@@ -8,6 +8,9 @@
 @import "./block/pagination.scss";
 @import "./block/support.scss";
 @import "./block/this_card.scss";
+@import "./block/this_card_history.scss";
+@import "./block/this_card_limits.scss";
+@import "./block/this_card_users.scss";
 
 @font-face {
   font-family: "RobotoCondensed-Light";
@@ -33,7 +36,14 @@
   font-family: "RobotoCondensed-Bold";
   src: url("../fonts/RobotoCondensed-Bold.ttf");
 }
-
+@font-face {
+  font-family: "RobotoCondensed-BoldItalic";
+  src: url("../fonts/RobotoCondensed-BoldItalic.ttf");
+}
+@font-face {
+  font-family: "RobotoCondensed-Italic";
+  src: url("../fonts/RobotoCondensed-Italic.ttf");
+}
 body {
   padding: 0;
   margin: 0;
